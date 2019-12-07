@@ -21,13 +21,10 @@ var questions = [
     },
 ];
 
-//chooses a random questions
-function randomQ(){
-    var random = Math.floor(Math.random() * questions.length + 1);
-    return random;
-}
+//Quiz functionality
 var questionCount = 0;
 answers.addEventListener("click", function(element){
+    //Conditionals
     if (element.target.innerHTML === "Start"){
         question.innerText = questions[questionCount].title
     }
@@ -41,6 +38,7 @@ answers.addEventListener("click", function(element){
     else {
         alert("wrong");
     }
+    //Reset and generate buttons
     answers.textContent = "";
     for (var i = 0; i < questions[questionCount].choices.length; i++){
         var button = document.createElement("button");
