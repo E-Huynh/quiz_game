@@ -26,30 +26,26 @@ function randomQ(){
     var random = Math.floor(Math.random() * questions.length + 1);
     return random;
 }
-var a = 0;
+var questionCount = 0;
 answers.addEventListener("click", function(element){
     if (element.target.innerHTML === "Start"){
-        question.innerText = questions[a].title
+        question.innerText = questions[questionCount].title
     }
-    //if a = length of questions objecct > return
-    else if (a === (questions.length -1)){
-        debugger;
+    else if (questionCount === (questions.length -1)){
         return alert(`you're done!!!`)
     }
-    else if (element.target.innerHTML === questions[a].answer){
-        a++;
-        question.innerText = questions[a].title
+    else if (element.target.innerHTML === questions[questionCount].answer){
+        questionCount++;
+        question.innerText = questions[questionCount].title
     }
     else {
         alert("wrong");
     }
     answers.textContent = "";
-    
-    for (var i = 0; i < questions[a].choices.length; i++){
+    for (var i = 0; i < questions[questionCount].choices.length; i++){
         var button = document.createElement("button");
         button.classList = "button";
-        button.innerHTML = questions[a].choices[i];
+        button.innerHTML = questions[questionCount].choices[i];
         answers.append(button);
     }
-    console.log(element.target.value);
 })
