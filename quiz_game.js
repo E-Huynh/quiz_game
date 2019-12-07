@@ -1,5 +1,6 @@
 //Selectors
 var answers = document.getElementById("answers");
+var question = document.getElementById("question");
 
 //quiz questions
 var questions = [
@@ -11,7 +12,7 @@ var questions = [
     {
         title: "The answer is 1:",
         choices: ["1", "2", "3", "4"],
-        answer: "2"
+        answer: "1"
     },
     {
         title: "The answer is I:",
@@ -26,9 +27,21 @@ function randomQ(){
     return random;
 }
 var a = 0;
-answers.addEventListener("click", function(banana){
-    if (banana.target.innerHTML === questions[a].answer){
+answers.addEventListener("click", function(element){
+    if (element.target.innerHTML === "Start"){
+        question.innerText = questions[a].title
+    }
+    //if a = length of questions objecct > return
+    else if (a === (questions.length -1)){
+        debugger;
+        return alert(`you're done!!!`)
+    }
+    else if (element.target.innerHTML === questions[a].answer){
         a++;
+        question.innerText = questions[a].title
+    }
+    else {
+        alert("wrong");
     }
     answers.textContent = "";
     
@@ -38,5 +51,5 @@ answers.addEventListener("click", function(banana){
         button.innerHTML = questions[a].choices[i];
         answers.append(button);
     }
-    console.log(banana.target.value);
+    console.log(element.target.value);
 })
