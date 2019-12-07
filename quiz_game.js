@@ -11,16 +11,32 @@ var questions = [
     {
         title: "The answer is 1:",
         choices: ["1", "2", "3", "4"],
-        answer: "1"
+        answer: "2"
+    },
+    {
+        title: "The answer is I:",
+        choices: ["I", "II", "III", "IV"],
+        answer: "I"
     },
 ];
 
-answers.addEventListener("click", function(){
+//chooses a random questions
+function randomQ(){
+    var random = Math.floor(Math.random() * questions.length + 1);
+    return random;
+}
+var a = 0;
+answers.addEventListener("click", function(banana){
+    if (banana.target.innerHTML === questions[a].answer){
+        a++;
+    }
     answers.textContent = "";
-    for (var i = 0; i < questions[0].choices.length; i++){
+    
+    for (var i = 0; i < questions[a].choices.length; i++){
         var button = document.createElement("button");
         button.classList = "button";
-        button.innerHTML = questions[0].choices[i];
+        button.innerHTML = questions[a].choices[i];
         answers.append(button);
     }
+    console.log(banana.target.value);
 })
