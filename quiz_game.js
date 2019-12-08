@@ -28,8 +28,10 @@ answers.addEventListener("click", function(element){
     //Conditionals
     if (element.target.innerHTML === "Start"){
         question.innerText = questions[questionCount].title
+        //START TIMER
     }
     else if (element.target.innerHTML === "Submit"){
+        //CALCULATE AND STORE TIME REMAINING
         var inputName = document.getElementsByClassName("input")[0].value;
         localStorage.setItem("Name", inputName);
         return;
@@ -56,6 +58,7 @@ answers.addEventListener("click", function(element){
         question.innerText = questions[questionCount].title
     }
     else {
+        //SUBTRACT TIME FROM TIMER
         alert("wrong");
     }
     //Reset and generate buttons
