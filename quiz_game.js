@@ -29,7 +29,15 @@ answers.addEventListener("click", function(element){
         question.innerText = questions[questionCount].title
     }
     else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
-        return alert(`you're done!!!`)
+        question.innerText = "You've answered all questions correctly. Enter your name to track your score.";
+        for (var i = 0; i < 4; i++){
+            var button = document.querySelector(".button");
+            button.remove();
+        }
+        button.classList = "button";
+        button.innerHTML = "Submit";
+        answers.append(button);
+        return;
     }
     else if (element.target.innerHTML === questions[questionCount].answer){
         questionCount++;
