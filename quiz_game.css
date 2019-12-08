@@ -50,11 +50,13 @@ hr{
 #answers{
     width: 100%;
     border: 5px orange solid;    
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
-
+.input{
+    border: 1px grey solid;
+    border-radius: 3px;
+}
 .button{
     background: green;
     font-size: 1.5em;

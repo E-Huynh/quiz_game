@@ -28,12 +28,22 @@ answers.addEventListener("click", function(element){
     if (element.target.innerHTML === "Start"){
         question.innerText = questions[questionCount].title
     }
+    else if (element.target.innerHTML === "Submit"){
+        alert("Highscore has been posted");
+        return;
+    }
     else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
-        question.innerText = "You've answered all questions correctly. Enter your name to track your score.";
+        question.innerHTML = "You've answered all questions correctly. Enter your name to track your score. <br>";
         for (var i = 0; i < 4; i++){
             var button = document.querySelector(".button");
             button.remove();
         }
+        var highscoreLabel = document.createElement("label");
+        var highscoreInput = document.createElement("input");
+        highscoreInput.classList = "input";
+        highscoreLabel.innerText = "Name: ";
+        question.append(highscoreLabel);
+        question.append(highscoreInput);
         button.classList = "button";
         button.innerHTML = "Submit";
         answers.append(button);
