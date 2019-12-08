@@ -2,6 +2,7 @@
 var answers = document.getElementById("answers");
 var question = document.getElementById("question");
 
+
 //quiz questions
 var questions = [
     {
@@ -29,7 +30,9 @@ answers.addEventListener("click", function(element){
         question.innerText = questions[questionCount].title
     }
     else if (element.target.innerHTML === "Submit"){
-        alert("Highscore has been posted");
+        var inputName = document.getElementsByClassName("input")[0].value;
+        // debugger;
+        localStorage.setItem("Name", inputName);
         return;
     }
     else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
@@ -42,10 +45,10 @@ answers.addEventListener("click", function(element){
         var highscoreInput = document.createElement("input");
         highscoreInput.classList = "input";
         highscoreLabel.innerText = "Name: ";
-        question.append(highscoreLabel);
-        question.append(highscoreInput);
         button.classList = "button";
         button.innerHTML = "Submit";
+        question.append(highscoreLabel);
+        question.append(highscoreInput);
         answers.append(button);
         return;
     }
