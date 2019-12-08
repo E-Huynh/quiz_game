@@ -31,7 +31,6 @@ answers.addEventListener("click", function(element){
     }
     else if (element.target.innerHTML === "Submit"){
         var inputName = document.getElementsByClassName("input")[0].value;
-        // debugger;
         localStorage.setItem("Name", inputName);
         return;
     }
