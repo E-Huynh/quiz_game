@@ -28,7 +28,7 @@ answers.addEventListener("click", function(element){
     if (element.target.innerHTML === "Start"){
         question.innerText = questions[questionCount].title
     }
-    else if (questionCount === (questions.length -1)){
+    else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
         return alert(`you're done!!!`)
     }
     else if (element.target.innerHTML === questions[questionCount].answer){
