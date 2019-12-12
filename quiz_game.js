@@ -1,6 +1,7 @@
 //Selectors
 var answers = document.getElementById("answers");
 var question = document.getElementById("question");
+var timer = document.getElementById("timeLeft");
 
 
 //quiz questions
@@ -22,13 +23,27 @@ var questions = [
     },
 ];
 
+//Timer settings
+var timeRemaining = 30;
+var quizTimer;
+
+function decrementTime(){
+    if (timeRemaining > 0){
+        timeRemaining--;
+        timer.innerText = timeRemaining;
+    }
+}
+
 //Quiz functionality
 var questionCount = 0;
+//consider a selector in the eventlistener for button to get right of bug!!!!
 answers.addEventListener("click", function(element){
+
     //Conditionals
     if (element.target.innerHTML === "Start"){
         question.innerText = questions[questionCount].title
         //START TIMER
+        quizTimer = setInterval(decrementTime, 1000);
     }
     else if (element.target.innerHTML === "Submit"){
         //CALCULATE AND STORE TIME REMAINING
@@ -37,6 +52,7 @@ answers.addEventListener("click", function(element){
         return;
     }
     else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
+        clearInterval(quizTimer);
         question.innerHTML = "You've answered all questions correctly. Enter your name to track your score. <br>";
         for (var i = 0; i < 4; i++){
             var button = document.querySelector(".button");
@@ -59,7 +75,7 @@ answers.addEventListener("click", function(element){
     }
     else {
         //SUBTRACT TIME FROM TIMER
-        alert("wrong");
+        timeRemaining -= 15;
     }
     //Reset and generate buttons
     answers.textContent = "";
