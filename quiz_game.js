@@ -26,7 +26,7 @@ var questions = [
 ];
 
 //Timer settings
-var timeRemaining = 30;
+var timeRemaining = 180;
 var quizTimer;
 var highscoreList = localStorage.getItem("highscores") || "[]";
 var storedscores = JSON.parse(highscoreList);
@@ -117,7 +117,7 @@ answers.addEventListener("click", function(element){
 
 //Displays HS stored
 for (var i = 0; i<storedscores.length; i++){
-    if (storedscores[i].Score > highestScore){
+    if (storedscores[i].Score >= highestScore){
         highestScore = storedscores[i].Score;
         highestScoreName = storedscores[i].Name;
     }
