@@ -26,6 +26,7 @@ var questions = [
 //Timer settings
 var timeRemaining = 30;
 var quizTimer;
+var storedscores;
 
 function decrementTime(){
     if (timeRemaining > 0){
@@ -50,8 +51,17 @@ answers.addEventListener("click", function(element){
     else if (element.target.innerHTML === "Submit"){
         //CALCULATE AND STORE TIME REMAINING
         var inputName = document.getElementsByClassName("input")[0].value;
-        localStorage.setItem("Score", timeRemaining);
-        localStorage.setItem("Name", inputName);
+        var highscoreList = localStorage.getItem("highscores") || "[]";
+        storedscores = JSON.parse(highscoreList);
+        storedscores.push(
+            {
+            Name: inputName,
+            Score: timeRemaining,
+            });
+        localStorage.setItem("highscores", JSON.stringify(storedscores));
+        // localStorage.setItem("Score", timeRemaining);
+        // localStorage.setItem("Name", inputName);
+
         question.innerText = "Your score has been recorded."
         return;
     }
