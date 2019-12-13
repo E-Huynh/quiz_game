@@ -38,17 +38,21 @@ function decrementTime(){
 var questionCount = 0;
 //consider a selector in the eventlistener for button to get right of bug!!!!
 answers.addEventListener("click", function(element){
-
     //Conditionals
+    // Checks to make sure a button was clicked and not the parent
+    if (element.target.className !== "button") {
+        return;
+    }
     if (element.target.innerHTML === "Start"){
         question.innerText = questions[questionCount].title
-        //START TIMER
         quizTimer = setInterval(decrementTime, 1000);
     }
     else if (element.target.innerHTML === "Submit"){
         //CALCULATE AND STORE TIME REMAINING
         var inputName = document.getElementsByClassName("input")[0].value;
+        localStorage.setItem("Score", timeRemaining);
         localStorage.setItem("Name", inputName);
+        question.innerText = "Your score has been recorded."
         return;
     }
     else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
@@ -74,8 +78,15 @@ answers.addEventListener("click", function(element){
         question.innerText = questions[questionCount].title
     }
     else {
-        //SUBTRACT TIME FROM TIMER
-        timeRemaining -= 15;
+        if (timeRemaining > 5){
+            timeRemaining -= 5;
+        }
+        else{
+            timeRemaining = 0;
+            timer.innerText = timeRemaining;
+        }
+        element.target.classList.add("wrong");
+        return;
     }
     //Reset and generate buttons
     answers.textContent = "";
