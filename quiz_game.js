@@ -64,7 +64,12 @@ answers.addEventListener("click", function(element){
             });
         localStorage.setItem("highscores", JSON.stringify(storedscores));
 
-        question.innerText = "Your score has been recorded."
+        question.innerText = "Scores List"
+        for (var i = 0; i < highscoreList.length; i++){
+            var list = document.createElement("p");
+            list.innerText = `${storedscores[i].Name}: ${storedscores[i].Score}`;
+            question.append(list);
+        }
         return;
     }
     else if (questionCount === (questions.length -1) && element.target.innerHTML === questions[questionCount].answer){
@@ -110,15 +115,12 @@ answers.addEventListener("click", function(element){
     }
 })
 
+//Displays HS stored
 for (var i = 0; i<storedscores.length; i++){
     if (storedscores[i].Score > highestScore){
-        console.log(highestScore);
         highestScore = storedscores[i].Score;
         highestScoreName = storedscores[i].Name;
-        console.log(highestScoreName);
-        console.log(highestScore);
     }
 }
 HSname.innerText = highestScoreName;
 HSscore.innerText = highestScore;
-
