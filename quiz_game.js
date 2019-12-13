@@ -2,6 +2,8 @@
 var answers = document.getElementById("answers");
 var question = document.getElementById("question");
 var timer = document.getElementById("timeLeft");
+var HSname = document.getElementById("highscoreName");
+var HSscore = document.getElementById("highscoreValue");
 
 
 //quiz questions
@@ -26,7 +28,9 @@ var questions = [
 //Timer settings
 var timeRemaining = 30;
 var quizTimer;
-var storedscores;
+var highscoreList = localStorage.getItem("highscores") || "[]";
+var storedscores = JSON.parse(highscoreList);
+var highestScore = 0;
 
 function decrementTime(){
     if (timeRemaining > 0){
@@ -51,7 +55,7 @@ answers.addEventListener("click", function(element){
     else if (element.target.innerHTML === "Submit"){
         //CALCULATE AND STORE TIME REMAINING
         var inputName = document.getElementsByClassName("input")[0].value;
-        var highscoreList = localStorage.getItem("highscores") || "[]";
+        highscoreList = localStorage.getItem("highscores") || "[]";
         storedscores = JSON.parse(highscoreList);
         storedscores.push(
             {
@@ -59,8 +63,6 @@ answers.addEventListener("click", function(element){
             Score: timeRemaining,
             });
         localStorage.setItem("highscores", JSON.stringify(storedscores));
-        // localStorage.setItem("Score", timeRemaining);
-        // localStorage.setItem("Name", inputName);
 
         question.innerText = "Your score has been recorded."
         return;
@@ -107,3 +109,16 @@ answers.addEventListener("click", function(element){
         answers.append(button);
     }
 })
+
+for (var i = 0; i<storedscores.length; i++){
+    if (storedscores[i].Score > highestScore){
+        console.log(highestScore);
+        highestScore = storedscores[i].Score;
+        highestScoreName = storedscores[i].Name;
+        console.log(highestScoreName);
+        console.log(highestScore);
+    }
+}
+HSname.innerText = highestScoreName;
+HSscore.innerText = highestScore;
+
