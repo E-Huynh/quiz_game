@@ -5,12 +5,11 @@
 The purpose of the project was to build a quiz game that asks a series of coding related questions. The game would display a question and populate buttons for possible answers. Upon selecting the correct answer, the questions and answers would cycle to the next question until all questions were answered. The game also utilizes a timer and the ability to input and store multiple highscores. The timer is reduced and the user is given visual indication if a incorect answer is selected.
 # Images
 ---
-### Start screen
-[Change image link](https://www.google.com)
-### Questions
-[i[Change image link](https://www.google.com)mage here]
-### High Score List
-[Change image link](https://www.google.com)
+[Start screen](https://drive.google.com/open?id=11sAXTfYdph3z64rF8clyWSXDmvcgi5NG)
+[Question and Answers](https://drive.google.com/drive/folders/1FLlfj4YarmziyB1yDnSgtIGpT58Eu6ew)
+[Quiz End Page and Highscore Input](https://drive.google.com/drive/folders/1FLlfj4YarmziyB1yDnSgtIGpT58Eu6ew)
+[Highscore List](https://drive.google.com/drive/folders/1FLlfj4YarmziyB1yDnSgtIGpT58Eu6ew)
+[Highest Score Displayed](https://drive.google.com/drive/folders/1FLlfj4YarmziyB1yDnSgtIGpT58Eu6ew)
 # Technologies Utilized
 * Flexbox
 * CSS
