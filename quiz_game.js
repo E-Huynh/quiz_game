@@ -9,19 +9,29 @@ var HSscore = document.getElementById("highscoreValue");
 //quiz questions
 var questions = [
     {
-        title: "The answer is A:",
-        choices: ["A", "B", "C", "D"],
-        answer: "A"
+        title: "What is the extension for Javascript files?",
+        choices: [".js", ".html", ".css", ".txt"],
+        answer: ".js"
     },
     {
-        title: "The answer is 1:",
-        choices: ["1", "2", "3", "4"],
-        answer: "1"
+        title: "In CSS, which would give the largest font-size?",
+        choices: ["0.5em", "2.0em", "1.5em", "1.0em"],
+        answer: "2.0em"
     },
     {
-        title: "The answer is I:",
-        choices: ["I", "II", "III", "IV"],
-        answer: "I"
+        title: "Which of the follow is NOT a loop in Javascript?",
+        choices: ["While", "For", "For/In", "Fruit"],
+        answer: "Fruit"
+    },
+    {
+        title: "Booleans values are true or false.",
+        choices: ["True", "False"],
+        answer: "True"
+    },
+    {
+        title: "Which of the follow is NOT an attribute in the CSS Box Model?",
+        choices: ["Height", "Padding", "Border", "Spacing"],
+        answer: "Spacing"
     },
 ];
 
