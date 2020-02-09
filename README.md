@@ -1,6 +1,17 @@
 # Coding Quiz Game
-## Project Description
+[Deployed Link](https://e-huynh.github.io/quiz_game/quiz_game.html)
 
+[Github Repo](https://github.com/E-Huynh/quiz_game)
+
+## Contact
+
+Erik.W.Huynh@Gmail.com
+
+[LinkedIn](https://www.linkedin.com/in/erik-huynh-228321196/)
+
+[Portfolio](https://e-huynh.github.io/updated_portfolio/)
+
+## Project Description
 The purpose of the project was to build a quiz game that asks a series of coding related questions. The game would display a question and populate buttons for possible answers. Upon selecting the correct answer, the questions and answers would cycle to the next question until all questions were answered. The game also utilizes a timer and the ability to input and store multiple highscores. The timer is reduced and the user is given visual indication if a incorect answer is selected.
 
 ## Technologies Utilized
