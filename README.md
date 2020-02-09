@@ -27,12 +27,21 @@ The landing page of the quiz displays the current stored highscore, a timer, a b
 
 ## Images
 Start screen
+
 ![Start screen](https://github.com/E-Huynh/quiz_game/blob/master/assets/start_screen.png?raw=true)
+
 Question and Answers
+
 ![Question and Answers](https://github.com/E-Huynh/quiz_game/blob/master/assets/questions.png?raw=true)
+
 Quiz End Page and Highscore Input
+
 ![Quiz End Page and Highscore Input](https://github.com/E-Huynh/quiz_game/blob/master/assets/highscore-input.png?raw=true)
+
 Highscore List
+
 ![Highscore List](https://github.com/E-Huynh/quiz_game/blob/master/assets/list.png?raw=true)
+
 Highest Score Displayed
+
 ![Highest Score Displayed](https://github.com/E-Huynh/quiz_game/blob/master/assets/hsdisplay.png?raw=true)
